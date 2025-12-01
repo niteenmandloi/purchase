@@ -1,0 +1,154 @@
+/* MAIN PAGE */
+
+.brand-page {
+    width: 100%;
+    padding: 12px;
+    background: #f7f7f7;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+
+/* Banner */
+
+.brand-banner {
+    background: #d00000;
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+
+/* Table */
+
+.brand-table {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    align-items: center;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-head {
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* Section Title */
+
+.section-title {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* Tabs */
+
+.tabs2 {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.tabs2 button {
+    flex: 1;
+    padding: 8px 12px;
+    background: #f3f3f3;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #555;
+    border: 1px #3333;
+}
+
+.tabs2 .active {
+    background: #d00000;
+    color: #fff;
+}
+
+
+/* Sub Tabs */
+
+.sub-tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    font-size: 13px;
+    color: #444;
+}
+
+
+/* Chips */
+
+.chips {
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #d00000;
+}
+
+
+/* Retailer Boxes */
+
+.retailer-boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.retailer-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.ret-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.ret-sub {
+    font-size: 12px;
+    color: #777;
+}
+
+
+/* Promo Banners */
+
+.promo-image {
+    height: 180px;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7HAGs3l6DrXEL5swZTDHATDU29D6Y_BJNvw&s") center/cover no-repeat;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.promo-image2 {
+    height: 180px;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9ZhpR6sEnRdwRtFgHyijQcTSL91FG5rQiCQ&s") center/cover no-repeat;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    margin-bottom: 70px;
+}

@@ -2,7 +2,8 @@ import React from 'react'
 import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer"
 import Order from "./pages/Order";
-import Home from './pages/Home';
+import Home from './pages/Home.jsx';
+
 const App = () => {
   return (
     <div>
