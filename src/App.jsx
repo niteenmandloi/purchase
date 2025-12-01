@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer"
 import Order from "./pages/Order";
 import Home from './pages/Home';
+import Header from './components/Header';
 const App = () => {
   return (
     <div>
@@ -10,6 +11,7 @@ const App = () => {
       <Route path="/" element={<Home />} />
         <Route path="/order" element={<Order />} />   {/* <-- Path for navigate */}
       </Routes>
+      <Header/>
       <Footer/>
 
     </div>
