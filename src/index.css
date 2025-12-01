@@ -1,5 +1,4 @@
 @import "tailwindcss";
-<<<<<<< HEAD
 body,
 html {
     margin: 0;
@@ -13,219 +12,242 @@ html {
     min-height: 100vh;
     overflow-y: auto;
 }
-=======
 
 
 /* full-page centering */
+
 .app-root {
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background: #f3f4f6;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 24px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #f3f4f6;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 24px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+
 
 /* wrapper that behaves like phone width but responsive */
+
 .phone-wrapper {
-  width: min(100%, 420px);
-  height: auto;
-  padding: 0 12px;
+    width: min(100%, 420px);
+    height: auto;
+    padding: 0 12px;
 }
+
 
 /* top white card (header area) */
+
 .header-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 12px 14px 10px;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-  border: 1px solid #e5e7eb;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 12px 14px 10px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e5e7eb;
 }
 
+
 /* header row: avatar + name + points */
+
 .header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
 }
 
 .header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
 
 /* avatar */
+
 .profile-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
+
 /* welcome + name text */
+
 .header-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.25;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
 }
 
 .welcome {
-  font-size: 11px;
-  color: #9ca3af;
-  margin: 0;
+    font-size: 11px;
+    color: #9ca3af;
+    margin: 0;
 }
 
 .username {
-  font-size: 14px;
-  font-weight: 600;
-  color: #111827;
-  margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
 }
 
+
 /* yellow points chip */
+
 .points-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #facc15;
-  color: #1f2937;
-  border-radius: 999px;
-  padding: 4px 10px;
-  font-size: 11px;
-  font-weight: 600;
-  white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #facc15;
+    color: #1f2937;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .points-icon {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 .points-value {
-  font-size: 11px;
+    font-size: 11px;
 }
+
 
 /* agency row (second row) */
+
 .agency-row {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
+
 /* grey pill with agency name */
+
 .agency-pill {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid #e5e7eb;
-  background: #f9fafb;
-  cursor: pointer;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    cursor: pointer;
 }
 
 .agency-text {
-  font-size: 11px;
-  color: #4b5563;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    font-size: 11px;
+    color: #4b5563;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .chevron {
-  font-size: 10px;
-  color: #6b7280;
-  margin-left: 8px;
+    font-size: 10px;
+    color: #6b7280;
+    margin-left: 8px;
 }
+
 
 /* small square settings button */
+
 .square-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 14px;
-  color: #6b7280;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #6b7280;
 }
 
+
 /* orders card (0 orders placed today) */
+
 .orders-card {
-  margin-top: 10px;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 10px 12px;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.07);
-  border: 1px solid #e5e7eb;
+    margin-top: 10px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px 12px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.07);
+    border: 1px solid #e5e7eb;
 }
 
 .orders-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .orders-title {
-  font-size: 13px;
-  font-weight: 500;
-  color: #111827;
+    font-size: 13px;
+    font-weight: 500;
+    color: #111827;
 }
 
+
 /* progress + label */
+
 .orders-progress {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .orders-progress-bar {
-  flex: 1;
-  height: 6px;
-  border-radius: 999px;
-  background: #e5e7eb;
-  overflow: hidden;
+    flex: 1;
+    height: 6px;
+    border-radius: 999px;
+    background: #e5e7eb;
+    overflow: hidden;
 }
 
 .orders-progress-fill {
-  width: 35%; /* adjust coverage here */
-  height: 100%;
-  background: #ef4444;
+    width: 35%;
+    /* adjust coverage here */
+    height: 100%;
+    background: #ef4444;
 }
+
 
 /* red tag on right */
+
 .orders-status {
-  font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 999px;
-  background: #ef4444;
-  color: #ffffff;
-  white-space: nowrap;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #ef4444;
+    color: #ffffff;
+    white-space: nowrap;
 }
+
 
 /* responsiveness tweaks for bigger screens */
+
 @media (min-width: 600px) {
-  .header-card {
-    padding: 14px 18px 12px;
-  }
-
-  .username {
-    font-size: 15px;
-  }
-
-  .orders-title {
-    font-size: 14px;
-  }
+    .header-card {
+        padding: 14px 18px 12px;
+    }
+    .username {
+        font-size: 15px;
+    }
+    .orders-title {
+        font-size: 14px;
+    }
 }
->>>>>>> eb2f9c940cd1ad4937cc45d5b715ea3abeb57807
