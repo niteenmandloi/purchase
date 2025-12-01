@@ -1,0 +1,222 @@
+/* OVERLAY */
+
+.invoice-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 0.3s ease;
+}
+
+
+/* MODAL */
+
+.invoice-page {
+    background: #fff;
+    width: 95%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    padding: 20px;
+    animation: slideUp 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* HEADER */
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+
+/* INVOICE BOX */
+
+.invoice-box {
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.invoice-id-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.paid-tag {
+    background: #4CAF50;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.amount-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.amount-row .label {
+    font-size: 12px;
+    color: #888;
+}
+
+.amount-row .value {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.date-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.file-btns button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 10px;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.pdf-btn {
+    background-color: #E53935;
+    color: white;
+}
+
+.xls-btn {
+    background-color: #43A047;
+    color: white;
+}
+
+
+/* SECTIONS */
+
+.section h3 {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+
+/* TRANSACTION CARD */
+
+.transaction-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.success-tag {
+    background: #4CAF50;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.txn-right {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+/* ITEM CARD */
+
+.item-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.qty {
+    font-weight: 500;
+}
+
+.scheme {
+    font-size: 12px;
+    color: #555;
+}
+
+.net-value {
+    font-weight: bold;
+    text-align: right;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 480px) {
+    .invoice-page {
+        width: 95%;
+        padding: 15px;
+    }
+    .amount-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .date-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
