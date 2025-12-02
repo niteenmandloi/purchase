@@ -1,135 +1,73 @@
-import React from "react";
-import "./InvoiceDetails.css";
-import { IoClose } from "react-icons/io5";
-import { FaFilePdf, FaFileExcel } from "react-icons/fa";
-import { FaChevronRight } from "react-icons/fa6";
+import { ref, onValue, remove } from "firebase/database";
+import { db } from "../firebase";
+import { useEffect, useState } from "react";
+import Footer from "../components/Footer";
+import { Trash2 } from "lucide-react";
 
-const Order = ({ isOpen, onClose }) => {
-  if (!isOpen) return null; // Don't render if modal is closed
+export default function Orders() {
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    const orderRef = ref(db, "orders");
+
+    onValue(orderRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const list = Object.keys(data).map((orderId) => ({
+          orderId,
+          ...data[orderId],
+        }));
+        setOrders(list);
+      } else {
+        setOrders([]);
+      }
+    });
+  }, []);
+
+  // DELETE ORDER
+  const deleteOrder = (orderId) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this order?");
+    if (!confirmDelete) return;
+
+    remove(ref(db, `orders/${orderId}`));
+    alert("Order deleted successfully!");
+  };
 
   return (
-    <div className="invoice-overlay" onClick={onClose}>
-      <div
-        className="invoice-page"
-        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
-      >
-        {/* HEADER */}
-        <div className="invoice-header">
-          <h2>Order Details</h2>
-          <button className="close-btn" onClick={onClose}>
-            <IoClose size={24} />
+    <div className="p-4 pb-20">
+      <h2 className="text-xl font-bold mb-4">New Orders</h2>
+
+      {orders.length === 0 && (
+        <p className="text-gray-500">No orders available.</p>
+      )}
+
+      {orders.map((o) => (
+        <div
+          key={o.orderId}
+          className="p-3 border bg-red-50 rounded-xl mb-3 relative"
+        >
+          {/* DELETE BUTTON */}
+          <button
+            onClick={() => deleteOrder(o.orderId)}
+            className="absolute top-3 right-3 text-red-600"
+          >
+            <Trash2 size={20} />
           </button>
-        </div>
 
-        {/* INVOICE BOX */}
-        <div className="invoice-box">
-          <div className="invoice-id-row">
-            <span className="invoice-id">Order# E043025-A0115394</span>
-            <span className="paid-tag">FULLY PAID</span>
-          </div>
+          <h3 className="font-bold">Order ID: {o.orderId}</h3>
+          <p className="font-semibold text-sm capitalize">Status: {o.status}</p>
+          <p className="font-semibold text-sm">Total: ₹{o.totalAmount}</p>
 
-          <div className="amount-row">
-            <div>
-              <p className="label">Order Amount</p>
-              <p className="value">₹ 1270.00</p>
-            </div>
-
-            <div>
-              <p className="label">Outstanding</p>
-              <p className="value">₹ 0.00</p>
-            </div>
-          </div>
-
-          <div className="date-row">
-            <p>Inv Date: 12 Nov 2025</p>
-            <p>Due Date: 19 Nov 2025</p>
-          </div>
-
-          <div className="file-btns">
-            <button className="pdf-btn">
-              <FaFilePdf /> PDF
-            </button>
-            <button className="xls-btn">
-              <FaFileExcel /> XLS
-            </button>
-          </div>
-        </div>
-
-        {/* LINKED TRANSACTIONS */}
-        <div className="section">
-          <h3>Linked Transactions (1)</h3>
-
-          <div className="transaction-card">
-            <div>
-              <p className="txn-id">CL07840708</p>
-              <span className="success-tag">SUCCESS</span>
-              <p className="txn-type">Rio Pay</p>
-            </div>
-
-            <div className="txn-right">
-              <p className="txn-amount">₹ 1270.0</p>
-              <FaChevronRight />
-            </div>
-          </div>
-        </div>
-
-        {/* ITEMS */}
-        <div className="section">
-          <h3>Items in this Invoice (3)</h3>
-
-          {/* ITEM 1 */}
-          <div className="item-card">
-            <p className="item-title">CORTEL 40MG - 15 TAB</p>
-            <div className="item-row">
-              <span>PTR: 51.2</span>
-              <span className="qty">Qty: 2</span>
-              <span>Free Qty: 0</span>
-            </div>
-            <p className="scheme">Scheme: --</p>
-            <div className="item-row">
-              <span>Batch: 02250725</span>
-              <span>Expiry: 28 Jun 2027</span>
-            </div>
-            <p className="net-value">Net Value: ₹102.4</p>
-          </div>
-
-          {/* ITEM 2 */}
-          <div className="item-card">
-            <p className="item-title">CRESTOR 40MG - 15 TAB</p>
-            <div className="item-row">
-              <span>PTR: 802.86</span>
-              <span className="qty">Qty: 1</span>
-              <span>Free Qty: 0</span>
-            </div>
-            <p className="scheme">Scheme: --</p>
-            <div className="item-row">
-              <span>Batch: CF2407</span>
-              <span>Expiry: 29 May 2027</span>
-            </div>
-            <p className="net-value">Net Value: ₹802.86</p>
-          </div>
-
-          {/* ITEM 3 */}
-          <div className="item-card">
-            <p className="item-title">
-              SINAREST DELICIOUS ROSE FLAVOUR BOTTLE OF 75ML
+          <h4 className="font-semibold mt-2">Items:</h4>
+          {o.items.map((i) => (
+            <p key={i.cartId} className="text-sm">
+              {i.name} — Qty: {i.qty}
             </p>
-            <div className="item-row">
-              <span>PTR: 104.99</span>
-              <span className="qty">Qty: 4</span>
-              <span>Free Qty: 0</span>
-            </div>
-            <p className="scheme">Scheme: 4 + 12.50%</p>
-            <div className="item-row">
-              <span>Batch: GA832</span>
-              <span>Expiry: 28 Jun 2028</span>
-            </div>
-            <p className="net-value">Net Value: ₹419.96</p>
-          </div>
+          ))}
         </div>
-      </div>
+      ))}
+
+      <Footer />
     </div>
   );
-};
-
-export default Order;
+}
